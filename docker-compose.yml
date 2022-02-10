@@ -1,0 +1,19 @@
+version: '3.4'
+services:
+  workstation:
+    build: ./workstation
+    container_name: chef-workstation
+    stdin_open: true
+    tty: true
+    links:
+      - target
+    ports:
+      - 22:22
+
+  target:
+    build: ./target
+    container_name: target
+    stdin_open: true
+    tty: true
+    ports:
+      - 22:22
