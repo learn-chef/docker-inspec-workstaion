@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt update && \
-    apt install -y locales vim curl iputils-ping openssh-client openssh-server && \
+    apt install -y locales vim curl iputils-ping openssh-client openssh-server iproute2 && \
     locale-gen en_US.UTF-8 && \
     update-locale LAN=en_US.UTF-8 && \
     apt clean && rm -rf /var/lib/apts/lists/* /tmp/* /var/tmp/*
